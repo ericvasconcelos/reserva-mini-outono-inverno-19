@@ -45,6 +45,30 @@ $font-title: 'Chalet', sans-serif;
           transform: $transforms;
 }
 
+@mixin calcDesk($property, $value) {
+  #{$property}: -moz-calc(0.85 * #{$value});
+  #{$property}: -webkit-calc(0.85 * #{$value});
+  #{$property}: calc(0.85 * #{$value});
+}
+
+@mixin calcLaptop($property, $value) {
+  #{$property}: -moz-calc(0.73 * #{$value});
+  #{$property}: -webkit-calc(0.73 * #{$value});
+  #{$property}: calc(0.73 * #{$value});
+}
+
+@mixin calcSmallLaptop($property, $value) {
+  #{$property}: -moz-calc(0.64 * #{$value});
+  #{$property}: -webkit-calc(0.64 * #{$value});
+  #{$property}: calc(0.64 * #{$value});
+}
+
+@mixin calcTablet($property, $value) {
+  #{$property}: -moz-calc(0.51 * #{$value});
+  #{$property}: -webkit-calc(0.51 * #{$value});
+  #{$property}: calc(0.51 * #{$value});
+}
+
 // General
 .rm-title {
   margin-bottom: 40px;
@@ -59,6 +83,29 @@ $font-title: 'Chalet', sans-serif;
   &.white {
     color: #FFFFFF;
   }
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(margin-bottom, 50px);
+    @include calcDesk(font-size, 50px);
+    letter-spacing: 5px;
+  }
+
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(margin-bottom, 50px);
+    @include calcLaptop(font-size, 50px);
+    letter-spacing: 3px;
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(margin-bottom, 50px);
+    @include calcSmallLaptop(font-size, 50px);
+    letter-spacing: 1px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(margin-bottom, 50px);
+    @include calcTablet(font-size, 50px);
+  }
 }
 
 .rm-paragraph {
@@ -69,6 +116,26 @@ $font-title: 'Chalet', sans-serif;
 
   &.white {
     color: #FFFFFF;
+  }
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(margin-bottom, 80px);
+    @include calcDesk(font-size, 25px);
+  }
+
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(margin-bottom, 80px);
+    @include calcLaptop(font-size, 25px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(margin-bottom, 80px);
+    @include calcSmallLaptop(font-size, 25px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(margin-bottom, 80px);
+    @include calcTablet(font-size, 25px);
   }
 }
 
@@ -85,9 +152,47 @@ $font-title: 'Chalet', sans-serif;
   text-align: center;
   text-decoration: none;
 
+  &:hover {
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+
   &.white {
     background-color: #FFFFFF;
     color: #090088;
+
+    &:hover {
+      text-decoration: none;
+      color: #090088;
+    }
+  }
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(width, 235px);
+    @include calcDesk(height, 58px);
+    @include calcDesk(font-size, 30px);
+    @include calcDesk(line-height, 58px);
+  }
+
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(width, 235px);
+    @include calcLaptop(height, 58px);
+    @include calcLaptop(font-size, 30px);
+    @include calcLaptop(line-height, 58px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(width, 235px);
+    @include calcSmallLaptop(height, 58px);
+    @include calcSmallLaptop(font-size, 30px);
+    @include calcSmallLaptop(line-height, 58px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(width, 235px);
+    @include calcTablet(height, 58px);
+    @include calcTablet(font-size, 30px);
+    @include calcTablet(line-height, 58px);
   }
 }
 
@@ -117,6 +222,22 @@ $font-title: 'Chalet', sans-serif;
   z-index: 2;
   height: 600px;
   width: 100%;
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(height, 600px);
+  }
+  
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(height, 600px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(height, 600px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(height, 600px);
+  }
 }
 
 .super-title {
@@ -133,6 +254,26 @@ $font-title: 'Chalet', sans-serif;
 
   span {
     display: block;
+  }
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(top, -180px);
+    @include calcDesk(font-size, 160px);
+  }
+
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(top, -180px);
+    @include calcLaptop(font-size, 160px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(top, -180px);
+    @include calcSmallLaptop(font-size, 160px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(top, -180px);
+    @include calcTablet(font-size, 160px);
   }
 }
 
@@ -174,24 +315,96 @@ $font-title: 'Chalet', sans-serif;
   top: 150px;
   right: 115px;
   width: 730px;
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(top, 150px);
+    @include calcDesk(right, 115px);
+    @include calcDesk(width, 600px);
+  }
+  
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(top, 150px);
+    @include calcLaptop(right, 115px);
+    @include calcLaptop(width, 600px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(top, 150px);
+    @include calcSmallLaptop(right, 115px);
+    @include calcSmallLaptop(width, 600px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(top, 150px);
+    @include calcTablet(right, 115px);
+    @include calcTablet(width, 600px);
+  }
 }
 
 // SHIRTS
 .shirts {
   display: block;
   width: 100%;
+  height: 1000px;
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(height, 1000px);
+  }
+  
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(height, 1000px);
+  }
 }
 
 .bg-shirts {
   position: relative;
   display: block;
   width: 80%;
-  height: 1000px;
+  height: 100%;
+
+  .shirts-img-1 {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
 
   .rm-cta {
     position: absolute;
     top: 160px;
     left: 115px;
+    width: 480px;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 160px);
+      @include calcDesk(left, 115px);
+      @include calcDesk(width, 480px);
+    }
+    
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 160px);
+      @include calcLaptop(left, 115px);
+      @include calcLaptop(width, 480px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 160px);
+      @include calcSmallLaptop(left, 115px);
+      @include calcSmallLaptop(width, 480px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 160px);
+      @include calcTablet(left, 115px);
+      @include calcTablet(width, 480px);
+    }
   }
 
   .shirts-title {
@@ -206,7 +419,6 @@ $font-title: 'Chalet', sans-serif;
   }
   
   .shirts-paragraph {
-    width: 560px;
     opacity: 0;
     @include transition(opacity 0.6s ease-in-out);
 
@@ -215,25 +427,18 @@ $font-title: 'Chalet', sans-serif;
     }
   }
 
-  .shirts-img-1 {
-    display: block;
-    width: 100%;
-    height: 1000px;
-  }
-
   .shirts-img-2 {
+    display: block;
     position: absolute;
     z-index: 2;
     top: 67px;
     right: -67px;
-    display: block;
     width: 443px;
     height: 663px;
     background: transparent url('./images/shirts-2.jpg') no-repeat left top;
     background-size: cover;
     background-attachment: scroll;
     background-position: -443px 0px;
-
     opacity: 0;
     @include transition(all 0.6s ease-in-out);
 
@@ -241,14 +446,42 @@ $font-title: 'Chalet', sans-serif;
       opacity: 1;
       background-position: 0px 0px;
     }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 67px);
+      @include calcDesk(right, -67px);
+      @include calcDesk(width, 443px);
+      @include calcDesk(height, 663px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 67px);
+      @include calcLaptop(right, -67px);
+      @include calcLaptop(width, 443px);
+      @include calcLaptop(height, 663px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 67px);
+      @include calcSmallLaptop(right, -67px);
+      @include calcSmallLaptop(width, 443px);
+      @include calcSmallLaptop(height, 663px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 67px);
+      @include calcTablet(right, -67px);
+      @include calcTablet(width, 443px);
+      @include calcTablet(height, 663px);
+    }
   }
 
   .shirts-img-3 {
+    display: block;
     position: absolute;
     z-index: 2;
     top: 547px;
     right: -255px;
-    display: block;
     width: 334px;
     opacity: 0;
     @include transition(all 0.6s ease-in-out);
@@ -258,6 +491,30 @@ $font-title: 'Chalet', sans-serif;
       opacity: 1;
       @include transform(translate(0, 0));
     }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 547px);
+      @include calcDesk(right, -255px);
+      @include calcDesk(width, 334px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 547px);
+      @include calcLaptop(right, -255px);
+      @include calcLaptop(width, 334px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 547px);
+      @include calcSmallLaptop(right, -255px);
+      @include calcSmallLaptop(width, 334px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 547px);
+      @include calcTablet(right, -255px);
+      @include calcTablet(width, 334px);
+    }
   }
 }
 
@@ -265,12 +522,52 @@ $font-title: 'Chalet', sans-serif;
 .shorts {
   position: relative;
   height: 1000px;
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(height, 1000px);
+  }
+  
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(height, 1000px);
+  }
   
   .rm-cta {
     position: absolute;
     top: 260px;
     left: 755px;
     width: 540px;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 260px);
+      @include calcDesk(left, 755px);
+      @include calcDesk(width, 540px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 260px);
+      @include calcLaptop(left, 755px);
+      @include calcLaptop(width, 540px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 260px);
+      @include calcSmallLaptop(left, 755px);
+      @include calcSmallLaptop(width, 540px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 260px);
+      @include calcTablet(left, 755px);
+      @include calcTablet(width, 540px);
+    }
   }
 
   .shorts-title {
@@ -305,6 +602,30 @@ $font-title: 'Chalet', sans-serif;
     &.active {
       @include transform(translate(0, 0));
     }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, -60px);
+      @include calcDesk(left, 115px);
+      @include calcDesk(width, 553px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, -60px);
+      @include calcLaptop(left, 115px);
+      @include calcLaptop(width, 553px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, -60px);
+      @include calcSmallLaptop(left, 115px);
+      @include calcSmallLaptop(width, 553px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, -60px);
+      @include calcTablet(left, 115px);
+      @include calcTablet(width, 553px);
+    }
   }
 
   .shorts-img-2 {
@@ -321,6 +642,26 @@ $font-title: 'Chalet', sans-serif;
       opacity: 1;
       @include transform(translate(0, 0));
     }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 420px);
+      @include calcDesk(width, 518px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 420px);
+      @include calcLaptop(width, 518px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 420px);
+      @include calcSmallLaptop(width, 518px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 420px);
+      @include calcTablet(width, 518px);
+    }
   }
 }
 
@@ -331,85 +672,212 @@ $font-title: 'Chalet', sans-serif;
   width: 100%;
   height: 1000px;
 
-  .bg-shoes {
-    position: absolute;
-    top: 0;
-    right: 0;
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(height, 1000px);
+  }
+  
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(height, 1000px);
+  }
+}
+
+.bg-shoes {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 80%;
+  height: 100%;
+
+  .shoes-img-1 {
     display: block;
-    width: 80%;
-    height: 1000px;
+    width: 100%;
+    height: 100%;
+  }
 
-    .rm-cta {
-      position: absolute;
-      top: 254px;
-      left: 710px;
+  .rm-cta {
+    position: absolute;
+    top: 254px;
+    left: 710px;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 254px);
+      @include calcDesk(left, 710px);
     }
 
-    .shoes-title {
-      opacity: 0;
-      @include transition(all 0.6s ease-in-out);
-      @include transform(translate(-100px, 100px));
-
-      &.active {
-        opacity: 1;
-        @include transform(translate(0, 0));
-      }
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 254px);
+      @include calcLaptop(left, 710px);
     }
 
-    .shoes-paragraph {
-      width: 360px;
-      margin-left: 275px;
-      font-size: 30px;
-      opacity: 0;
-      @include transition(opacity 0.6s ease-in-out);
-
-      &.active {
-        opacity: 1;
-      }
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 254px);
+      @include calcSmallLaptop(left, 710px);
     }
 
-    .rm-btn {
-      margin-left: 275px;
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 254px);
+      @include calcTablet(left, 710px);
+    }
+  }
+
+  .shoes-title {
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(-100px, 100px));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+  }
+
+  .shoes-paragraph {
+    width: 300px;
+    margin-left: 275px;
+    opacity: 0;
+    @include transition(opacity 0.6s ease-in-out);
+
+    &.active {
+      opacity: 1;
     }
 
-    .shoes-img-1 {
-      display: block;
-      width: 100%;
-      height: 1000px;
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(width, 300px);
+      @include calcDesk(margin-left, 275px);
     }
 
-    .shoes-img-2 {
-      position: absolute;
-      z-index: 2;
-      top: 120px;
-      left: -300px;
-      display: block;
-      width: 938px;
-      height: 614px;
-      opacity: 0;
-      @include transition(all 0.6s ease-in-out);
-      @include transform(translate(-300px, 300px));
-
-      &.active {
-        opacity: 1;
-        @include transform(translate(0, 0));
-      }
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(width, 300px);
+      @include calcLaptop(margin-left, 275px);
     }
 
-    .shoes-img-3 {
-      position: absolute;
-      z-index: 2;
-      top: 400px;
-      left: 400px;
-      display: block;
-      width: 539px;
-      height: 539px;
-      @include transition(all 0.6s ease-in-out);
-      @include transform(translate(0, 200px));
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(width, 300px);
+      @include calcSmallLaptop(margin-left, 275px);
+    }
 
-      &.active {
-        @include transform(translate(0, 0));
-      }
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(width, 300px);
+      @include calcTablet(margin-left, 275px);
+    }
+  }
+
+  .rm-btn {
+    margin-left: 275px;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(margin-left, 275px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(margin-left, 275px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(margin-left, 275px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(margin-left, 275px);
+    }
+  }
+
+  .shoes-img-2 {
+    position: absolute;
+    z-index: 2;
+    top: 120px;
+    left: -300px;
+    display: block;
+    width: 938px;
+    height: 614px;
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(-300px, 300px));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 120px);
+      @include calcDesk(left, -300px);
+      @include calcDesk(width, 938px);
+      @include calcDesk(height, 614px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 120px);
+      @include calcLaptop(left, -300px);
+      @include calcLaptop(width, 938px);
+      @include calcLaptop(height, 614px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 120px);
+      @include calcSmallLaptop(left, -300px);
+      @include calcSmallLaptop(width, 938px);
+      @include calcSmallLaptop(height, 614px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 120px);
+      @include calcTablet(left, -300px);
+      @include calcTablet(width, 938px);
+      @include calcTablet(height, 614px);
+    }
+  }
+
+  .shoes-img-3 {
+    position: absolute;
+    z-index: 2;
+    top: 400px;
+    left: 400px;
+    display: block;
+    width: 539px;
+    height: 539px;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(0, 200px));
+
+    &.active {
+      @include transform(translate(0, 0));
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 400px);
+      @include calcDesk(left, 400px);
+      @include calcDesk(width, 539px);
+      @include calcDesk(height, 539px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 400px);
+      @include calcLaptop(left, 400px);
+      @include calcLaptop(width, 539px);
+      @include calcLaptop(height, 539px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 400px);
+      @include calcSmallLaptop(left, 400px);
+      @include calcSmallLaptop(width, 539px);
+      @include calcSmallLaptop(height, 539px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 400px);
+      @include calcTablet(left, 400px);
+      @include calcTablet(width, 539px);
+      @include calcTablet(height, 539px);
     }
   }
 }
@@ -418,16 +886,51 @@ $font-title: 'Chalet', sans-serif;
 .babies {
   position: relative;
   height: 1000px;
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(height, 1000px);
+  }
+  
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(height, 1000px);
+  }
   
   .rm-cta {
     position: relative;
     top: 240px;
-    margin: 0 auto 0;
+    margin: 0 auto;
     width: 447px;
     text-align: center;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 240px);
+      @include calcDesk(width, 447px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 240px);
+      @include calcLaptop(width, 447px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 240px);
+      @include calcSmallLaptop(width, 447px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 240px);
+      @include calcTablet(width, 447px);
+    }
   }
   
-
   .babies-title,
   .babies-paragraph {
     opacity: 0;
@@ -454,6 +957,34 @@ $font-title: 'Chalet', sans-serif;
       opacity: 1;
       @include transform(translate(0, 0));
     }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 100px);
+      @include calcDesk(left, 115px);
+      @include calcDesk(width, 293px);
+      @include calcDesk(height, 435px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 100px);
+      @include calcLaptop(left, 115px);
+      @include calcLaptop(width, 293px);
+      @include calcLaptop(height, 435px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 100px);
+      @include calcSmallLaptop(left, 115px);
+      @include calcSmallLaptop(width, 293px);
+      @include calcSmallLaptop(height, 435px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 100px);
+      @include calcTablet(left, 115px);
+      @include calcTablet(width, 293px);
+      @include calcTablet(height, 435px);
+    }
   }
 
   .babies-img-2 {
@@ -472,6 +1003,34 @@ $font-title: 'Chalet', sans-serif;
       opacity: 1;
       @include transform(translate(0, 0));
     }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 400px);
+      @include calcDesk(left, 365px);
+      @include calcDesk(width, 309px);
+      @include calcDesk(height, 559px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 400px);
+      @include calcLaptop(left, 365px);
+      @include calcLaptop(width, 309px);
+      @include calcLaptop(height, 559px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 400px);
+      @include calcSmallLaptop(left, 365px);
+      @include calcSmallLaptop(width, 309px);
+      @include calcSmallLaptop(height, 559px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 400px);
+      @include calcTablet(left, 365px);
+      @include calcTablet(width, 309px);
+      @include calcTablet(height, 559px);
+    }
   }
 
   .babies-img-3 {
@@ -487,6 +1046,34 @@ $font-title: 'Chalet', sans-serif;
     &.active {
       opacity: 1;
     }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 100px);
+      @include calcDesk(right, 70px);
+      @include calcDesk(width, 640px);
+      @include calcDesk(height, 758px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 100px);
+      @include calcLaptop(right, 70px);
+      @include calcLaptop(width, 640px);
+      @include calcLaptop(height, 758px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 100px);
+      @include calcSmallLaptop(right, 70px);
+      @include calcSmallLaptop(width, 640px);
+      @include calcSmallLaptop(height, 758px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 100px);
+      @include calcTablet(right, 70px);
+      @include calcTablet(width, 640px);
+      @include calcTablet(height, 758px);
+    }
   }
 }
 
@@ -494,18 +1081,66 @@ $font-title: 'Chalet', sans-serif;
 .jacket {
   display: block;
   width: 100%;
+  height: 1000px;
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(height, 1000px);
+  }
+  
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(height, 1000px);
+  }
 }
 
 .bg-jacket {
   position: relative;
   display: block;
   width: 63%;
-  height: 1000px;
+  height: 100%;
+
+  .jacket-img-1 {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
 
   .rm-cta {
     position: absolute;
     top: 340px;
     left: 285px;
+    width: 560px;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 340px);
+      @include calcDesk(left, 285px);
+      @include calcDesk(width, 560px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 340px);
+      @include calcLaptop(left, 285px);
+      @include calcLaptop(width, 560px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 340px);
+      @include calcSmallLaptop(left, 285px);
+      @include calcSmallLaptop(width, 560px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 340px);
+      @include calcTablet(left, 285px);
+      @include calcTablet(width, 560px);
+    }
   }
 
   .jacket-title {
@@ -520,7 +1155,6 @@ $font-title: 'Chalet', sans-serif;
   }
 
   .jacket-paragraph {
-    width: 560px;
     opacity: 0;
     @include transition(all 0.6s ease-in-out);
     @include transform(translate(0, 50px));
@@ -529,12 +1163,6 @@ $font-title: 'Chalet', sans-serif;
       opacity: 1;
       @include transform(translate(0, 0));
     }
-  }
-
-  .jacket-img-1 {
-    display: block;
-    width: 100%;
-    height: 1000px;
   }
 
   .jacket-img-2 {
@@ -553,6 +1181,34 @@ $font-title: 'Chalet', sans-serif;
       opacity: 1;
       @include transform(translate(0, 0));
     }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 40px);
+      @include calcDesk(right, -350px);
+      @include calcDesk(width, 700px);
+      @include calcDesk(height, 860px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 40px);
+      @include calcLaptop(right, -350px);
+      @include calcLaptop(width, 700px);
+      @include calcLaptop(height, 860px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 40px);
+      @include calcSmallLaptop(right, -350px);
+      @include calcSmallLaptop(width, 700px);
+      @include calcSmallLaptop(height, 860px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 40px);
+      @include calcTablet(right, -350px);
+      @include calcTablet(width, 700px);
+      @include calcTablet(height, 860px);
+    }
   }
 }
 
@@ -560,12 +1216,48 @@ $font-title: 'Chalet', sans-serif;
 .pants {
   position: relative;
   height: 1000px;
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(height, 1000px);
+  }
+  
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(height, 1000px);
+  }
   
   .rm-cta {
-    position: absolute;
+    position: relative;
     top: 260px;
-    left: 805px;
     width: 350px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 260px);
+      @include calcDesk(width, 350px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 260px);
+      @include calcLaptop(width, 350px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 260px);
+      @include calcSmallLaptop(width, 350px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 260px);
+      @include calcTablet(width, 350px);
+    }
   }
 
   .pants-title {
@@ -594,7 +1286,7 @@ $font-title: 'Chalet', sans-serif;
     display: block;
     position: absolute;
     top: 90px;
-    left: 155px;
+    left: 125px;
     width: 553px;
     opacity: 0;
     @include transition(all 0.6s ease-in-out);
@@ -603,6 +1295,30 @@ $font-title: 'Chalet', sans-serif;
     &.active {
       opacity: 1;
       @include transform(translate(0, 0));
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 90px);
+      @include calcDesk(left, 125px);
+      @include calcDesk(width, 553px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 90px);
+      @include calcLaptop(left, 125px);
+      @include calcLaptop(width, 553px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 90px);
+      @include calcSmallLaptop(left, 125px);
+      @include calcSmallLaptop(width, 553px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 90px);
+      @include calcTablet(left, 125px);
+      @include calcTablet(width, 553px);
     }
   }
 
@@ -620,6 +1336,30 @@ $font-title: 'Chalet', sans-serif;
       opacity: 1;
       @include transform(translate(0, 0));
     }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, -60px);
+      @include calcDesk(right, 115px);
+      @include calcDesk(width, 518px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, -60px);
+      @include calcLaptop(right, 115px);
+      @include calcLaptop(width, 518px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, -60px);
+      @include calcSmallLaptop(right, 115px);
+      @include calcSmallLaptop(width, 518px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, -60px);
+      @include calcTablet(right, 115px);
+      @include calcTablet(width, 518px);
+    }
   }
 }
 
@@ -630,64 +1370,148 @@ $font-title: 'Chalet', sans-serif;
   width: 100%;
   height: 1000px;
 
-  .bg-coats {
-    position: absolute;
-    top: 0;
-    right: 0;
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(height, 1000px);
+  }
+  
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(height, 1000px);
+  }
+}
+
+.bg-coats {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 80%;
+  height: 100%;
+
+  .coats-img-1 {
     display: block;
-    width: 80%;
-    height: 1000px;
+    width: 100%;
+    height: 100%;
+  }
 
-    .rm-cta {
-      position: absolute;
-      top: 254px;
-      left: 410px;
+  .rm-cta {
+    position: absolute;
+    top: 254px;
+    left: 410px;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 254px);
+      @include calcDesk(left, 410px);
     }
 
-    .coats-title {
-      opacity: 0;
-      @include transition(all 0.6s ease-in-out);
-      @include transform(translate(50px, 0));
-
-      &.active {
-        opacity: 1;
-        @include transform(translate(0, 0));
-      }
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 254px);
+      @include calcLaptop(left, 410px);
     }
 
-    .coats-paragraph {
-      width: 360px;
-      font-size: 30px;
-      opacity: 0;
-      @include transition(opacity 1s ease-in-out);
-
-      &.active {
-        opacity: 1;
-      }
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 254px);
+      @include calcSmallLaptop(left, 410px);
     }
 
-    .coats-img-1 {
-      display: block;
-      width: 100%;
-      height: 1000px;
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 254px);
+      @include calcTablet(left, 410px);
+    }
+  }
+
+  .coats-title {
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(50px, 0));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+  }
+
+  .coats-paragraph {
+    width: 360px;
+    font-size: 30px;
+    opacity: 0;
+    @include transition(opacity 1s ease-in-out);
+
+    &.active {
+      opacity: 1;
     }
 
-    .coats-img-2 {
-      position: absolute;
-      z-index: 2;
-      top: 120px;
-      left: -180px;
-      display: block;
-      width: 501px;
-      height: 750px;
-      opacity: 0;
-      @include transition(all 0.6s ease-in-out);
-      @include transform(translate(-100%, 0));
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(width, 360px);
+      @include calcDesk(font-size, 30px);
+    }
 
-      &.active {
-        opacity: 1;
-        @include transform(translate(0, 0));
-      }
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(width, 360px);
+      @include calcLaptop(font-size, 30px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(width, 360px);
+      @include calcSmallLaptop(font-size, 30px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(width, 360px);
+      @include calcTablet(font-size, 30px);
+    }
+  }
+
+  .coats-img-2 {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 120px;
+    left: -180px;
+    width: 501px;
+    height: 750px;
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(-100%, 0));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 120px);
+      @include calcDesk(left, -180px);
+      @include calcDesk(width, 501px);
+      @include calcDesk(height, 750px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 120px);
+      @include calcLaptop(left, -180px);
+      @include calcLaptop(width, 501px);
+      @include calcLaptop(height, 750px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 120px);
+      @include calcSmallLaptop(left, -180px);
+      @include calcSmallLaptop(width, 501px);
+      @include calcSmallLaptop(height, 750px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 120px);
+      @include calcTablet(left, -180px);
+      @include calcTablet(width, 501px);
+      @include calcTablet(height, 750px);
     }
   }
 }
@@ -705,10 +1529,42 @@ $font-title: 'Chalet', sans-serif;
 
   &:first-child {
     margin-right: 100px;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(margin-right, 100px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(margin-right, 100px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(margin-right, 100px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(margin-right, 100px);
+    }
   }
 
   &:last-child {
     margin-left: 100px;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(margin-right, 100px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(margin-right, 100px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(margin-right, 100px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(margin-right, 100px);
+    }
   }
 }
 
@@ -730,6 +1586,30 @@ $font-title: 'Chalet', sans-serif;
     opacity: 1;
     @include transform(translate(0, 0));
   }
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(margin-bottom, 100px);
+    @include calcDesk(font-size, 36px);
+    @include calcDesk(letter-spacing, 13px);
+  }
+
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(margin-bottom, 100px);
+    @include calcLaptop(font-size, 36px);
+    @include calcLaptop(letter-spacing, 13px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(margin-bottom, 100px);
+    @include calcSmallLaptop(font-size, 36px);
+    @include calcSmallLaptop(letter-spacing, 13px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(margin-bottom, 100px);
+    @include calcTablet(font-size, 36px);
+    @include calcTablet(letter-spacing, 13px);
+  }
 }
 
 .rm-spotify,
@@ -738,6 +1618,30 @@ $font-title: 'Chalet', sans-serif;
   height: 440px;
   margin-bottom: 60px;
   background-color: #7F7F7F;
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(width, 440px);
+    @include calcDesk(height, 440px);
+    @include calcDesk(margin-bottom, 60px);
+  }
+
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(width, 440px);
+    @include calcLaptop(height, 440px);
+    @include calcLaptop(margin-bottom, 60px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(width, 440px);
+    @include calcSmallLaptop(height, 440px);
+    @include calcSmallLaptop(margin-bottom, 60px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(width, 440px);
+    @include calcTablet(height, 440px);
+    @include calcTablet(margin-bottom, 60px);
+  }
 }
 
 
