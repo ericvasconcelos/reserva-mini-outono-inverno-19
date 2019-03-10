@@ -39,7 +39,10 @@ export default function template() {
 
     _coatsTitle,
     _coatsParagraph,
-    _coatsImgTwo;
+    _coatsImgTwo,
+
+    _playlistTitle,
+    _instaTitle;
 
   let windowHeight,
     titlePartOnePos,
@@ -78,12 +81,15 @@ export default function template() {
 
     coatsTitlePos,
     coatsParagraphPos,
-    coatsImgTwoPos;
+    coatsImgTwoPos,
+
+    playlistTitlePos,
+    instaTitlePos;
 
   const showItemOnScreen = (item, itemPosition) => {
     const scrollPosition = $(window).scrollTop();
 
-    if (scrollPosition > (itemPosition - (_windowHeight - 80))) {
+    if (scrollPosition > (itemPosition - (_windowHeight - 120))) {
       if (!item.hasClass('active')) {
         item.addClass('active');
       }
@@ -161,6 +167,11 @@ export default function template() {
     coatsTitlePos = _coatsTitle.offset().top;
     coatsParagraphPos = _coatsParagraph.offset().top;
     coatsImgTwoPos = _coatsImgTwo.offset().top;
+
+    _playlistTitle = $('.playlist-title');
+    _instaTitle = $('.insta-title');
+    playlistTitlePos = _playlistTitle.offset().top;
+    instaTitlePos = _instaTitle.offset().top;
   });
 
   $(window).resize(function() {
@@ -184,13 +195,13 @@ export default function template() {
 
     showItemOnScreen(_shoesTitle, shoesTitlePos);
     showItemOnScreen(_shoesParagraph, shoesParagraphPos);
-    showItemOnScreen(_shoesImgTwo, shoesImgTwoPos);
-    showItemOnScreen(_shoesImgThree, shoesImgThreePos);
+    showItemOnScreen(_shoesImgTwo, shoesTitlePos);
+    showItemOnScreen(_shoesImgThree, shoesTitlePos);
 
     showItemOnScreen(_babiesTitle, babiesTitlePos);
     showItemOnScreen(_babiesParagraph, babiesParagraphPos);
     showItemOnScreen(_babiesImgOne, babiesImgOnePos);
-    showItemOnScreen(_babiesImgTwo, babiesImgTwoPos);
+    showItemOnScreen(_babiesImgTwo, babiesImgOnePos);
     showItemOnScreen(_babiesImgThree, babiesImgThreePos);
 
     showItemOnScreen(_jacketTitle, jacketTitlePos);
@@ -205,5 +216,8 @@ export default function template() {
     showItemOnScreen(_coatsTitle, coatsTitlePos);
     showItemOnScreen(_coatsParagraph, coatsParagraphPos);
     showItemOnScreen(_coatsImgTwo, coatsImgTwoPos);
+
+    showItemOnScreen(_playlistTitle, playlistTitlePos);
+    showItemOnScreen(_instaTitle, instaTitlePos);
   });
 }
