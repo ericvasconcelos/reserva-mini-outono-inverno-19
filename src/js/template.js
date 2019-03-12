@@ -7,10 +7,10 @@ export default function template() {
     _titlePartTwo,
     _titlePartThree,
 
-    _shirtsTitle,
-    _shirtsParagraph,
-    _shirtsImgTwo,
-    _shirtsImgThree,
+    _tshirtsTitle,
+    _tshirtsParagraph,
+    _tshirtsImgTwo,
+    _tshirtsImgThree,
 
     _shortsTitle,
     _shortsParagraph,
@@ -28,9 +28,9 @@ export default function template() {
     _babiesImgTwo,
     _babiesImgThree,
 
-    _jacketTitle,
-    _jacketParagraph,
-    _jacketImgTwo,
+    _shirtsTitle,
+    _shirtsParagraph,
+    _shirtsImgTwo,
 
     _pantsTitle,
     _pantsParagraph,
@@ -49,10 +49,10 @@ export default function template() {
     titlePartTwoPos,
     titlePartThreePos,
 
-    shirtsTitlePos,
-    shirtsParagraphPos,
-    shirtsImgTwoPos,
-    shirtsImgThreePos,
+    tshirtsTitlePos,
+    tshirtsParagraphPos,
+    tshirtsImgTwoPos,
+    tshirtsImgThreePos,
 
     shortsTitlePos,
     shortsParagraphPos,
@@ -70,9 +70,9 @@ export default function template() {
     babiesImgTwoPos,
     babiesImgThreePos,
 
-    jacketTitlePos,
-    jacketParagraphPos,
-    jacketImgTwoPos,
+    shirtsTitlePos,
+    shirtsParagraphPos,
+    shirtsImgTwoPos,
 
     pantsTitlePos,
     pantsParagraphPos,
@@ -107,14 +107,14 @@ export default function template() {
     titlePartTwoPos = _titlePartTwo.offset().top;
     titlePartThreePos = _titlePartThree.offset().top;
 
-    _shirtsTitle = $('.shirts-title');
-    _shirtsParagraph = $('.shirts-paragraph');
-    _shirtsImgTwo = $('.shirts-img-2');
-    _shirtsImgThree = $('.shirts-img-3');
-    shirtsTitlePos = _shirtsTitle.offset().top;
-    shirtsParagraphPos = _shirtsParagraph.offset().top;
-    shirtsImgTwoPos = _shirtsImgTwo.offset().top;
-    shirtsImgThreePos = _shirtsImgThree.offset().top;
+    _tshirtsTitle = $('.tshirts-title');
+    _tshirtsParagraph = $('.tshirts-paragraph');
+    _tshirtsImgTwo = $('.tshirts-img-2');
+    _tshirtsImgThree = $('.tshirts-img-3');
+    tshirtsTitlePos = _tshirtsTitle.offset().top;
+    tshirtsParagraphPos = _tshirtsParagraph.offset().top;
+    tshirtsImgTwoPos = _tshirtsImgTwo.offset().top;
+    tshirtsImgThreePos = _tshirtsImgThree.offset().top;
 
     _shortsTitle = $('.shorts-title');
     _shortsParagraph = $('.shorts-paragraph');
@@ -145,12 +145,12 @@ export default function template() {
     babiesImgTwoPos = _babiesImgTwo.offset().top;
     babiesImgThreePos = _babiesImgThree.offset().top;
 
-    _jacketTitle = $('.jacket-title');
-    _jacketParagraph = $('.jacket-paragraph');
-    _jacketImgTwo = $('.jacket-img-2');
-    jacketTitlePos = _jacketTitle.offset().top;
-    jacketParagraphPos = _jacketParagraph.offset().top;
-    jacketImgTwoPos = _jacketImgTwo.offset().top;
+    _shirtsTitle = $('.shirts-title');
+    _shirtsParagraph = $('.shirts-paragraph');
+    _shirtsImgTwo = $('.shirts-img-2');
+    shirtsTitlePos = _shirtsTitle.offset().top;
+    shirtsParagraphPos = _shirtsParagraph.offset().top;
+    shirtsImgTwoPos = _shirtsImgTwo.offset().top;
 
     _pantsTitle = $('.pants-title');
     _pantsParagraph = $('.pants-paragraph');
@@ -183,10 +183,10 @@ export default function template() {
     showItemOnScreen(_titlePartTwo, titlePartTwoPos);
     showItemOnScreen(_titlePartThree, titlePartThreePos);
 
-    showItemOnScreen(_shirtsTitle, shirtsTitlePos);
-    showItemOnScreen(_shirtsParagraph, shirtsParagraphPos);
-    showItemOnScreen(_shirtsImgTwo, shirtsImgTwoPos);
-    showItemOnScreen(_shirtsImgThree, shirtsImgThreePos);
+    showItemOnScreen(_tshirtsTitle, tshirtsTitlePos);
+    showItemOnScreen(_tshirtsParagraph, tshirtsParagraphPos);
+    showItemOnScreen(_tshirtsImgTwo, tshirtsImgTwoPos);
+    showItemOnScreen(_tshirtsImgThree, tshirtsImgThreePos);
 
     showItemOnScreen(_shortsTitle, shortsTitlePos);
     showItemOnScreen(_shortsParagraph, shortsParagraphPos);
@@ -204,9 +204,9 @@ export default function template() {
     showItemOnScreen(_babiesImgTwo, babiesImgOnePos);
     showItemOnScreen(_babiesImgThree, babiesImgThreePos);
 
-    showItemOnScreen(_jacketTitle, jacketTitlePos);
-    showItemOnScreen(_jacketParagraph, jacketParagraphPos);
-    showItemOnScreen(_jacketImgTwo, jacketImgTwoPos);
+    showItemOnScreen(_shirtsTitle, shirtsTitlePos);
+    showItemOnScreen(_shirtsParagraph, shirtsParagraphPos);
+    showItemOnScreen(_shirtsImgTwo, shirtsImgTwoPos);
 
     showItemOnScreen(_pantsTitle, pantsTitlePos);
     showItemOnScreen(_pantsParagraph, pantsParagraphPos);

@@ -141,7 +141,7 @@ $font-title: 'Chalet', sans-serif;
 
 .rm-btn {
   display: inline-block;
-  width: 235px;
+  width: 275px;
   height: 58px;
   background-color: #090088;
   color: #FFFFFF;
@@ -151,6 +151,7 @@ $font-title: 'Chalet', sans-serif;
   line-height: 58px;
   text-align: center;
   text-decoration: none;
+  text-transform: uppercase;
 
   &:hover {
     text-decoration: none;
@@ -315,6 +316,7 @@ $font-title: 'Chalet', sans-serif;
   top: 150px;
   right: 115px;
   width: 730px;
+  font-family: 'Myriad Pro', sans-serif;
 
   @media screen and (max-width: 1680px) {
     @include calcDesk(top, 150px);
@@ -341,8 +343,8 @@ $font-title: 'Chalet', sans-serif;
   }
 }
 
-// SHIRTS
-.shirts {
+// TSHIRTS
+.tshirts {
   display: block;
   width: 100%;
   height: 1000px;
@@ -364,16 +366,14 @@ $font-title: 'Chalet', sans-serif;
   }
 }
 
-.bg-shirts {
+.bg-tshirts {
   position: relative;
   display: block;
   width: 80%;
-  height: 100%;
 
-  .shirts-img-1 {
+  .tshirts-img-1 {
     display: block;
     width: 100%;
-    height: 100%;
   }
 
   .rm-cta {
@@ -407,7 +407,7 @@ $font-title: 'Chalet', sans-serif;
     }
   }
 
-  .shirts-title {
+  .tshirts-title {
     opacity: 0;
     @include transition(all 0.6s ease-in-out);
     @include transform(translate(0, 50px));
@@ -418,7 +418,7 @@ $font-title: 'Chalet', sans-serif;
     }
   }
   
-  .shirts-paragraph {
+  .tshirts-paragraph {
     opacity: 0;
     @include transition(opacity 0.6s ease-in-out);
 
@@ -427,15 +427,15 @@ $font-title: 'Chalet', sans-serif;
     }
   }
 
-  .shirts-img-2 {
+  .tshirts-img-2 {
     display: block;
     position: absolute;
     z-index: 2;
     top: 67px;
     right: -67px;
     width: 443px;
-    height: 663px;
-    background: transparent url('./images/shirts-2.jpg') no-repeat left top;
+    height: 664px;
+    background: transparent url('./images/tshirts-2.jpg') no-repeat left top;
     background-size: cover;
     background-attachment: scroll;
     background-position: -443px 0px;
@@ -476,7 +476,7 @@ $font-title: 'Chalet', sans-serif;
     }
   }
 
-  .shirts-img-3 {
+  .tshirts-img-3 {
     display: block;
     position: absolute;
     z-index: 2;
@@ -593,7 +593,7 @@ $font-title: 'Chalet', sans-serif;
   .shorts-img-1 {
     display: block;
     position: absolute;
-    top: -60px;
+    top: -90px;
     left: 115px;
     width: 553px;
     @include transition(all 0.6s ease-in-out);
@@ -694,13 +694,11 @@ $font-title: 'Chalet', sans-serif;
   top: 0;
   right: 0;
   display: block;
-  width: 80%;
-  height: 100%;
+  width: 83%;
 
   .shoes-img-1 {
     display: block;
     width: 100%;
-    height: 100%;
   }
 
   .rm-cta {
@@ -798,7 +796,7 @@ $font-title: 'Chalet', sans-serif;
     left: -300px;
     display: block;
     width: 938px;
-    height: 614px;
+    height: 650px;
     opacity: 0;
     @include transition(all 0.6s ease-in-out);
     @include transform(translate(-300px, 300px));
@@ -812,28 +810,28 @@ $font-title: 'Chalet', sans-serif;
       @include calcDesk(top, 120px);
       @include calcDesk(left, -300px);
       @include calcDesk(width, 938px);
-      @include calcDesk(height, 614px);
+      @include calcDesk(height, 650px);
     }
 
     @media screen and (max-width: 1440px) {
       @include calcLaptop(top, 120px);
       @include calcLaptop(left, -300px);
       @include calcLaptop(width, 938px);
-      @include calcLaptop(height, 614px);
+      @include calcLaptop(height, 650px);
     }
 
     @media screen and (max-width: 1280px) {
       @include calcSmallLaptop(top, 120px);
       @include calcSmallLaptop(left, -300px);
       @include calcSmallLaptop(width, 938px);
-      @include calcSmallLaptop(height, 614px);
+      @include calcSmallLaptop(height, 650px);
     }
 
     @media screen and (max-width: 1024px) {
       @include calcTablet(top, 120px);
       @include calcTablet(left, -300px);
       @include calcTablet(width, 938px);
-      @include calcTablet(height, 614px);
+      @include calcTablet(height, 650px);
     }
   }
 
@@ -844,7 +842,6 @@ $font-title: 'Chalet', sans-serif;
     left: 400px;
     display: block;
     width: 539px;
-    height: 539px;
     @include transition(all 0.6s ease-in-out);
     @include transform(translate(0, 200px));
 
@@ -856,28 +853,24 @@ $font-title: 'Chalet', sans-serif;
       @include calcDesk(top, 400px);
       @include calcDesk(left, 400px);
       @include calcDesk(width, 539px);
-      @include calcDesk(height, 539px);
     }
 
     @media screen and (max-width: 1440px) {
       @include calcLaptop(top, 400px);
       @include calcLaptop(left, 400px);
       @include calcLaptop(width, 539px);
-      @include calcLaptop(height, 539px);
     }
 
     @media screen and (max-width: 1280px) {
       @include calcSmallLaptop(top, 400px);
       @include calcSmallLaptop(left, 400px);
       @include calcSmallLaptop(width, 539px);
-      @include calcSmallLaptop(height, 539px);
     }
 
     @media screen and (max-width: 1024px) {
       @include calcTablet(top, 400px);
       @include calcTablet(left, 400px);
       @include calcTablet(width, 539px);
-      @include calcTablet(height, 539px);
     }
   }
 }
@@ -948,7 +941,6 @@ $font-title: 'Chalet', sans-serif;
     top: 100px;
     left: 115px;
     width: 367px;
-    height: 544px;
     opacity: 0;
     @include transition(all 0.6s ease-in-out);
     @include transform(translate(-100%, 0));
@@ -962,28 +954,24 @@ $font-title: 'Chalet', sans-serif;
       @include calcDesk(top, 100px);
       @include calcDesk(left, 115px);
       @include calcDesk(width, 293px);
-      @include calcDesk(height, 435px);
     }
 
     @media screen and (max-width: 1440px) {
       @include calcLaptop(top, 100px);
       @include calcLaptop(left, 115px);
       @include calcLaptop(width, 293px);
-      @include calcLaptop(height, 435px);
     }
 
     @media screen and (max-width: 1280px) {
       @include calcSmallLaptop(top, 100px);
       @include calcSmallLaptop(left, 115px);
       @include calcSmallLaptop(width, 293px);
-      @include calcSmallLaptop(height, 435px);
     }
 
     @media screen and (max-width: 1024px) {
       @include calcTablet(top, 100px);
       @include calcTablet(left, 115px);
       @include calcTablet(width, 293px);
-      @include calcTablet(height, 435px);
     }
   }
 
@@ -994,7 +982,6 @@ $font-title: 'Chalet', sans-serif;
     top: 400px;
     left: 365px;
     width: 309px;
-    height: 559px;
     opacity: 0;
     @include transition(all 0.6s ease-in-out);
     @include transform(translate(100%, 0));
@@ -1008,28 +995,24 @@ $font-title: 'Chalet', sans-serif;
       @include calcDesk(top, 400px);
       @include calcDesk(left, 365px);
       @include calcDesk(width, 309px);
-      @include calcDesk(height, 559px);
     }
 
     @media screen and (max-width: 1440px) {
       @include calcLaptop(top, 400px);
       @include calcLaptop(left, 365px);
       @include calcLaptop(width, 309px);
-      @include calcLaptop(height, 559px);
     }
 
     @media screen and (max-width: 1280px) {
       @include calcSmallLaptop(top, 400px);
       @include calcSmallLaptop(left, 365px);
       @include calcSmallLaptop(width, 309px);
-      @include calcSmallLaptop(height, 559px);
     }
 
     @media screen and (max-width: 1024px) {
       @include calcTablet(top, 400px);
       @include calcTablet(left, 365px);
       @include calcTablet(width, 309px);
-      @include calcTablet(height, 559px);
     }
   }
 
@@ -1077,8 +1060,8 @@ $font-title: 'Chalet', sans-serif;
   }
 }
 
-// JACKET
-.jacket {
+// SHIRTS
+.shirts {
   display: block;
   width: 100%;
   height: 1000px;
@@ -1100,13 +1083,13 @@ $font-title: 'Chalet', sans-serif;
   }
 }
 
-.bg-jacket {
+.bg-shirts {
   position: relative;
   display: block;
   width: 63%;
   height: 100%;
 
-  .jacket-img-1 {
+  .shirts-img-1 {
     display: block;
     width: 100%;
     height: 100%;
@@ -1143,7 +1126,7 @@ $font-title: 'Chalet', sans-serif;
     }
   }
 
-  .jacket-title {
+  .shirts-title {
     opacity: 0;
     @include transition(all 0.6s ease-in-out);
     @include transform(translate(0, 50px));
@@ -1154,7 +1137,7 @@ $font-title: 'Chalet', sans-serif;
     }
   }
 
-  .jacket-paragraph {
+  .shirts-paragraph {
     opacity: 0;
     @include transition(all 0.6s ease-in-out);
     @include transform(translate(0, 50px));
@@ -1165,7 +1148,7 @@ $font-title: 'Chalet', sans-serif;
     }
   }
 
-  .jacket-img-2 {
+  .shirts-img-2 {
     position: absolute;
     z-index: 2;
     top: 40px;
@@ -1393,12 +1376,10 @@ $font-title: 'Chalet', sans-serif;
   right: 0;
   display: block;
   width: 80%;
-  height: 100%;
 
   .coats-img-1 {
     display: block;
     width: 100%;
-    height: 100%;
   }
 
   .rm-cta {
@@ -1476,7 +1457,6 @@ $font-title: 'Chalet', sans-serif;
     top: 120px;
     left: -180px;
     width: 501px;
-    height: 750px;
     opacity: 0;
     @include transition(all 0.6s ease-in-out);
     @include transform(translate(-100%, 0));
@@ -1490,28 +1470,24 @@ $font-title: 'Chalet', sans-serif;
       @include calcDesk(top, 120px);
       @include calcDesk(left, -180px);
       @include calcDesk(width, 501px);
-      @include calcDesk(height, 750px);
     }
 
     @media screen and (max-width: 1440px) {
       @include calcLaptop(top, 120px);
       @include calcLaptop(left, -180px);
       @include calcLaptop(width, 501px);
-      @include calcLaptop(height, 750px);
     }
 
     @media screen and (max-width: 1280px) {
       @include calcSmallLaptop(top, 120px);
       @include calcSmallLaptop(left, -180px);
       @include calcSmallLaptop(width, 501px);
-      @include calcSmallLaptop(height, 750px);
     }
 
     @media screen and (max-width: 1024px) {
       @include calcTablet(top, 120px);
       @include calcTablet(left, -180px);
       @include calcTablet(width, 501px);
-      @include calcTablet(height, 750px);
     }
   }
 }
